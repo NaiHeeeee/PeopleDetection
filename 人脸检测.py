@@ -10,6 +10,18 @@ from PyQt5.QtWidgets import *
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui_MainWindow, self).__init__()
+        self.statusbar = None
+        self.lineEdit = None
+        self.textBrowser = None
+        self.menubar = None
+        self.pushButton = None
+        self.pushButton_2 = None
+        self.centralwidget = None
+        self.label = None
+        self.label_2 = None
+        self.label_3 = None
+        self.label_4 = None
+        self.cwd = None
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -82,23 +94,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             print("\n取消选择")
             return
         self.lineEdit.setText(filename[0])
-        if os.path.isfile(self.lineEdit.text()) == True:
+        if os.path.isfile(self.lineEdit.text()):
 
             JPG = QtGui.QPixmap(self.lineEdit.text())
             self.label.setPixmap(JPG)
             self.label.setScaledContents(True)
         else:
             pass
-
-    # def display_processed(self, img):
-    #     # 将 OpenCV 图片格式转换为 QImage 格式
-    #     height, width, channel = img.shape
-    #     bytesPerLine = channel * width
-    #     qImg = QImage(img.data, width, height, bytesPerLine, QImage.Format_RGB888).rgbSwapped()
-    #
-    #     # 将 QImage 显示在 QLabel 控件中
-    #     self.label.setPixmap(QPixmap.fromImage(qImg))
-    #     self.label.setScaledContents(True)
 
     def pepple_detection(self):
         # 加载人脸检测模型
