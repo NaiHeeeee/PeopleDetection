@@ -15,8 +15,9 @@ def train():
     epochs = 100
 
     # 设置训练集和验证集的路径
-    train_data_dir = 'face_data/train/'
-    val_data_dir = 'face_data/val/'
+    file_dir = os.path.dirname(__file__)
+    train_data_dir = os.path.join(file_dir, 'face_data/train/')
+    val_data_dir = os.path.join(file_dir, 'face_data/val/')
 
     # 使用ResNet50模型，去掉最后一层，并添加一个全连接层，作为新的输出层
     base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(img_height, img_width, 3))
@@ -63,7 +64,7 @@ def train():
               validation_steps=len(val_generator))
 
     # 保存模型
-    model.save('trained_model/face_detection_model.h5')
+    model.save(os.path.join(file_dir, 'trained_model/face_detection_model.h5'))
     print('[INFO] Model saved.')
 
 
