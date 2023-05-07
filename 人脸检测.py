@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
+import sys
+import os
 from PyQt5.QtGui import QImage, QPixmap
 from keras.models import load_model
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
 from PyQt5.QtWidgets import *
 
 
@@ -143,8 +144,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
 
 if __name__ == "__main__":
-    import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
