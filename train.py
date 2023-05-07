@@ -63,7 +63,7 @@ def train():
               validation_steps=len(val_generator))
 
     # 保存模型
-    model.save('model/face_detection_model.h5')
+    model.save('trained_model/face_detection_model.h5')
     print('[INFO] Model saved.')
 
 
