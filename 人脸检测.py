@@ -89,7 +89,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton_2.clicked.connect(self.pepple_detection)
 
     def display_orginal(self):
-        self.cwd = os.getcwd()
+        file_dir = os.path.dirname(__file__)
+        self.cwd = os.path.join(file_dir, 'test_jpg')
         filename = QFileDialog.getOpenFileName(self, "选取要检测的图片", self.cwd, "Image Files (*.jpg)")
         if filename[0] == "":
             print("\n取消选择")
@@ -108,7 +109,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         face_detection_model = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
         # 加载人脸识别模型
-        face_recognition_model = load_model('trained_model/face_detection_model.h5')
+        file_dir = os.path.dirname(__file__)
+        model_file = os.path.join(file_dir, 'trained_model/face_detection_model.h5')
+        face_recognition_model = load_model(model_file)
 
         # 加载图片
         img = cv2.imread(self.lineEdit.text())
