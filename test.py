@@ -9,7 +9,8 @@ def test():
     face_detection_model = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
     # 加载人脸识别模型
-    face_recognition_model = load_model('trained_model/face_detection_model.h5')
+    file_dir = os.path.dirname(__file__)
+    face_recognition_model = load_model(os.path.join(file_dir, 'trained_model/face_detection_model.h5'))
 
     # 获取test文件夹下所有文件的文件名列表
     img_paths = os.listdir('test_jpg')
