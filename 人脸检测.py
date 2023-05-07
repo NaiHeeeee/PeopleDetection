@@ -108,7 +108,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         face_detection_model = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
         # 加载人脸识别模型
-        face_recognition_model = load_model('model/face_detection_model.h5')
+        face_recognition_model = load_model('trained_model/face_detection_model.h5')
 
         # 加载图片
         img = cv2.imread(self.lineEdit.text())
