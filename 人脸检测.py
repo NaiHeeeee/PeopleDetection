@@ -3,12 +3,14 @@ import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
 from keras.models import load_model
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os, sys
+import os
 from PyQt5.QtWidgets import *
+
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui_MainWindow, self).__init__()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1244, 750)
@@ -71,17 +73,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.label_3.setText(_translate("MainWindow", "人数："))
         self.label_4.setText(_translate("MainWindow", "图片所在路径："))
         self.pushButton.clicked.connect(self.display_orginal)
-        self.pushButton_2.clicked.connect(self.test)
+        self.pushButton_2.clicked.connect(self.pepple_detection)
 
     def display_orginal(self):
         self.cwd = os.getcwd()
-        fileName = QFileDialog.getOpenFileName(self, "选取要检测的图片",
-                                               self.cwd,
-                                               "Image Files (*.jpg)")  # 设置文件扩展名过滤，同时包含JPG和PNG格式
-        if fileName[0] == "":
+        filename = QFileDialog.getOpenFileName(self, "选取要检测的图片", self.cwd, "Image Files (*.jpg)")
+        if filename[0] == "":
             print("\n取消选择")
             return
-        self.lineEdit.setText(fileName[0])
+        self.lineEdit.setText(filename[0])
         if os.path.isfile(self.lineEdit.text()) == True:
 
             JPG = QtGui.QPixmap(self.lineEdit.text())
@@ -90,18 +90,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         else:
             pass
 
+    # def display_processed(self, img):
+    #     # 将 OpenCV 图片格式转换为 QImage 格式
+    #     height, width, channel = img.shape
+    #     bytesPerLine = channel * width
+    #     qImg = QImage(img.data, width, height, bytesPerLine, QImage.Format_RGB888).rgbSwapped()
+    #
+    #     # 将 QImage 显示在 QLabel 控件中
+    #     self.label.setPixmap(QPixmap.fromImage(qImg))
+    #     self.label.setScaledContents(True)
 
-    def display_processed(self, img):
-        # 将 OpenCV 图片格式转换为 QImage 格式
-        height, width, channel = img.shape
-        bytesPerLine = channel * width
-        qImg = QImage(img.data, width, height, bytesPerLine, QImage.Format_RGB888).rgbSwapped()
-
-        # 将 QImage 显示在 QLabel 控件中
-        self.label.setPixmap(QPixmap.fromImage(qImg))
-        self.label.setScaledContents(True)
-
-    def test(self):
+    def pepple_detection(self):
         # 加载人脸检测模型
         face_detection_model = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
@@ -118,8 +117,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         # 统计人脸数
         count = len(faces)
 
-        # 在原图片左上角添加红色数字显示人脸数
-        #cv2.putText(img, f"{count}", (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         self.textBrowser.setText(str(count))
         # 遍历每张人脸
         for (x, y, w, h) in faces:
@@ -145,6 +142,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
