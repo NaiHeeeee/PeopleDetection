@@ -1,0 +1,3 @@
+##ignore this file##
+.idea/
+model/face_detection_model.h5
