@@ -47,6 +47,7 @@ def train():
         batch_size=batch_size,
         class_mode='binary',
         color_mode='rgb')
+
     val_generator = train_datagen.flow_from_directory(
         val_data_dir,
         target_size=(img_height, img_width),
