@@ -2,4 +2,4 @@
 
 .idea/
 trained_model/face_detection_model.h5
-face_data/
+face_picture/
