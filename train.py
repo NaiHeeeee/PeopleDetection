@@ -17,7 +17,7 @@ def train():
     # 设置训练集和验证集的路径
     file_dir = os.path.dirname(__file__)
     train_data_dir = os.path.join(file_dir, 'face_pictures/train_pictures/')
-    val_data_dir = os.path.join(file_dir, 'face_pictures/val/')
+    val_data_dir = os.path.join(file_dir, 'face_pictures/val_pictures/')
 
     # 使用ResNet50模型，去掉最后一层，并添加一个全连接层，作为新的输出层
     base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(img_height, img_width, 3))
