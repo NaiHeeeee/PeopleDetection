@@ -90,7 +90,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def display_orginal(self):
         file_dir = os.path.dirname(__file__)
-        self.cwd = os.path.join(file_dir, 'detected_picture')
+        self.cwd = os.path.join(file_dir, 'detected_pictures')
         filename = QFileDialog.getOpenFileName(self, "选取要检测的图片", self.cwd, "Image Files (*.jpg)")
         if filename[0] == "":
             print("\n取消选择")
