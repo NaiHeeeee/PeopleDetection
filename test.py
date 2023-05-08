@@ -13,12 +13,12 @@ def test():
     face_recognition_model = load_model(os.path.join(file_dir, 'trained_model/face_detection_model.h5'))
 
     # 获取test文件夹下所有文件的文件名列表
-    img_paths = os.listdir('detected_picture')
+    img_paths = os.listdir('detected_pictures')
 
     # 遍历每张图片
     for img_path in img_paths:
         # 加载图片
-        img = cv2.imread(os.path.join('detected_picture', img_path))
+        img = cv2.imread(os.path.join('detected_pictures', img_path))
 
         # 检测人脸
         faces = face_detection_model.detectMultiScale(img, scaleFactor=1.1, minNeighbors=5)
