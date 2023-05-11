@@ -80,11 +80,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "图像处理：人数检测"))
         self.label.setText(_translate("MainWindow", "原图"))
         self.label_2.setText(_translate("MainWindow", "检测后"))
-        self.pushButton.setText(_translate("MainWindow", "选择图片"))
-        self.pushButton_2.setText(_translate("MainWindow", "人数检测"))
         self.label_3.setText(_translate("MainWindow", "人数："))
         self.label_4.setText(_translate("MainWindow", "图片所在路径："))
+        self.pushButton.setText(_translate("MainWindow", "选择图片"))
         self.pushButton.clicked.connect(self.display_orginal)
+        self.pushButton_2.setText(_translate("MainWindow", "人数检测"))
         self.pushButton_2.clicked.connect(self.pepple_detection)
 
     def display_orginal(self):
