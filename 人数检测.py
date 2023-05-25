@@ -101,7 +101,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.label.setPixmap(picture)
             self.label.setScaledContents(True)
         else:
-            pass
+            QMessageBox.warning(self, "警告", "图片不存在！")
+
 
     def pepple_detection(self):
         # 加载人脸检测模型
