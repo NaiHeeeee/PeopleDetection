@@ -2,7 +2,7 @@
 
 ## 一·项目主要文件介绍
 
-<img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/1.png" alt="项目文件" style="zoom:67%;" />
+<img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/1.png" alt="项目文件" style="zoom: 50%;" />
 
 ### 1· 文件夹Images用于存放README图片
 
@@ -16,7 +16,7 @@
 
 ​	/train/Images储存训练图片，/val/Images储存验证图片
 
-![facedata下的文件夹](https://gitee.com/naihe6/people-detection/raw/master/Imags/2.png)
+<img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/2.png" alt="facedata下的文件夹" style="zoom:67%;" />
 
 
 
