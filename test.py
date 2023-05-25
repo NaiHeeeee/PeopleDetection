@@ -40,7 +40,7 @@ def test():
             face = np.expand_dims(face, axis=0)
 
             # 使用模型预测人脸数量
-            count = int(face_recognition_model.predict(face)[0][0])
+            int(face_recognition_model.predict(face)[0][0])
 
             # 在人脸部分画框和添加数字
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
