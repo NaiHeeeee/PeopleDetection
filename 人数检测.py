@@ -3,9 +3,9 @@ import numpy as np
 import sys
 import os
 from PyQt5.QtGui import QImage, QPixmap
-from keras.models import load_model
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
+from keras.models import load_model
 
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
