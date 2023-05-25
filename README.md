@@ -2,7 +2,7 @@
 
 ## 一·项目主要文件介绍
 
-<img src="Imags\1.png" style="zoom:60%" align="left" />
+![项目文件](https://gitee.com/naihe6/people-detection/blob/master/Imags/1.png)
 
 ### 1· 文件夹Images用于存放README图片
 
@@ -14,9 +14,9 @@
 
 ### 3· 文件夹facedata用于存放训练人脸识别模型的图片数据
 
-​	其中的/train/Images储存训练图片，/val/Images储存验证图片
+​	/train/Images储存训练图片，/val/Images储存验证图片
 
-​	<img src="Imags\2.png" style="zoom:60%"/>
+![facedata下的文件夹](https://gitee.com/naihe6/people-detection/blob/master/Imags/2.png)
 
 
 
@@ -34,11 +34,11 @@
 
 ​	效果如下：
 
-<img src="Imags\3.png" style="zoom:60%;" />
+![识别前](https://gitee.com/naihe6/people-detection/blob/master/Imags/3.png)
 
 ​	识别后效果：
 
-<img src="Imags\4.png" style="zoom:60%;" />
+![识别后](https://gitee.com/naihe6/people-detection/blob/master/Imags/4.png)
 
 
 
