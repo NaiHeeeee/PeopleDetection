@@ -1,7 +1,7 @@
 import cv2
-import numpy as np
 import sys
 import os
+import numpy as np
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
