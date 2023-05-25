@@ -19,7 +19,7 @@ def train():
     train_data_dir = os.path.join(file_dir, 'facedata/train/')
     val_data_dir = os.path.join(file_dir, 'facedata/val/')
 
-    # 使用ResNet50模型，去掉最后一层，并添加一个全连接层，作为新的输出层
+    # 使用ResNet50模型，去掉最后一层，并添加一个全连接层，作为新输出层
     base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(img_height, img_width, 3))
     x = base_model.output
     x = Flatten()(x)
