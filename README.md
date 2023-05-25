@@ -30,9 +30,9 @@
 
 
 
-### 6· 人数检测.py为用于人数检测的程序代码
+### 6· 人数检测.py为用于人数检测的主程序代码
 
-​	效果如下：
+​	识别前效果：
 
 <img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/3.png" alt="识别前" style="zoom:67%;" />
 
