@@ -28,7 +28,11 @@
 
 ​	*[人脸识别模型](https://pan.baidu.com/s/1n0upAnbbuRf5gprslOZWRA?pwd=trb6 )*
 
+
+
 ### 5· test.py为用于生成训练模型的代码
+
+​	使用ResNet50模型进行训练
 
 
 
