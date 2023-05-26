@@ -8,16 +8,17 @@ from keras.applications import ResNet50
 
 def train():
     # 设置训练集和测试集的图像尺寸
-    img_width, img_height = 224, 224
+    img_width, img_height = 360, 480
 
     # 设置批次大小和训练迭代次数
     batch_size = 32
-    epochs = 100
+    epochs = 20
 
-    # 设置训练集和验证集的路径
+    # 设置训练集，验证集和测试集的路径
     file_dir = os.path.dirname(__file__)
     train_data_dir = os.path.join(file_dir, 'facedata/train/')
     val_data_dir = os.path.join(file_dir, 'facedata/val/')
+    test_data_dir = os.path.join(file_dir, 'facedata/test/')
 
     # 使用ResNet50模型，去掉最后一层，并添加一个全连接层，作为新输出层
     base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(img_height, img_width, 3))
@@ -56,12 +57,25 @@ def train():
         class_mode='binary',
         color_mode='rgb')
 
+    test_generator = train_datagen.flow_from_directory(
+        test_data_dir,
+        target_size=(img_height, img_width),
+        batch_size=batch_size,
+        class_mode='binary',
+        color_mode='rgb')
+
     # 训练模型
     model.fit(train_generator,
               steps_per_epoch=len(train_generator),
               epochs=epochs,
               validation_data=val_generator,
               validation_steps=len(val_generator))
+
+    # 评估模型在测试集上的性能
+    model.evaluate(test_generator, steps=len(test_generator))
+    test_loss, test_acc = model.evaluate(test_generator, steps=len(test_generator))
+    print('Test loss:', test_loss)
+    print('Test accuracy:', test_acc)
 
     # 保存模型
     model.save(os.path.join(file_dir, 'trained_model/face_detection_model.h5'))
@@ -70,3 +84,4 @@ def train():
 
 if __name__ == "__main__":
     train()
+
