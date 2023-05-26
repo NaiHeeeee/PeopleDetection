@@ -20,7 +20,7 @@
 
 用于存放训练人脸识别模型的图片数据
 
-​	/train/Images储存训练图片，/val/Images储存验证图片，
+​	/train储存训练图片，/val储存验证图片，/test储存测试图片
 
 ​	数据集：中科院计算技术研究所[CAS-PEAL](http://www.jdl.link/peal/)数据集
 
