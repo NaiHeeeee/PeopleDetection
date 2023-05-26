@@ -22,13 +22,17 @@
 
 ​	/train储存训练图片，/val储存验证图片，/test储存测试图片
 
-​	数据集：中科院计算技术研究所[CAS-PEAL](http://www.jdl.link/peal/)数据集
+​	数据集：中科院计算技术研究所*[CAS-PEAL-R1 Face Database](http://www.jdl.link/peal/)*
 
-​		链接：[CAS-PEAL-R1](https://pan.baidu.com/s/1trlF2Fk6-qaZLdQn1mw4Jw?pwd=969c)
+<img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/5.png" style="zoom: 67%;" />
 
-​	facedata为修改后的部分CAS-PEAL-R1数据集：
+​		*[CAS-PEAL-R1下载链接](https://pan.baidu.com/s/1trlF2Fk6-qaZLdQn1mw4Jw?pwd=969c)*
 
-​		链接：[facedata](https://pan.baidu.com/s/1JP3Jn3HAjjjvz0X_rePLdQ?pwd=is3n)
+
+
+​	facedata为用于本项目中修改后的部分CAS-PEAL-R1数据集：
+
+​		*[facedata下载链接](https://pan.baidu.com/s/1JP3Jn3HAjjjvz0X_rePLdQ?pwd=is3n)*
 
 <img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/2.png" alt="facedata下的文件夹" style="zoom:67%;" />
 
