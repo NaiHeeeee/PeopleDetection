@@ -24,7 +24,7 @@
 
 
 
-​	数据集：中科院计算技术研究所*[CAS-PEAL-R1 Face Database](http://www.jdl.link/peal/)*
+​	数据集：中国科学院自动化研究所（CASIA）*[CAS-PEAL-R1 Face Database](http://www.jdl.link/peal/)*
 
 <img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/2.png" style="zoom: 67%;" />
 
