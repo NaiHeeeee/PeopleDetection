@@ -31,46 +31,46 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.cwd = None
 
     def setupUi(self, mainWindow):
-        mainWindow.setObjectName("MainWindow")
-        mainWindow.resize(1244, 750)
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1920, 1080)
 
         self.centralwidget = QtWidgets.QWidget(mainWindow)
         self.centralwidget.setObjectName("centralwidget")
 
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(10, 10, 581, 451))
+        self.label.setGeometry(QtCore.QRect(10, 250, 521, 361))
         self.label.setObjectName("label")
 
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(650, 10, 581, 451))
+        self.label_2.setGeometry(QtCore.QRect(580, 10, 1291, 911))
         self.label_2.setObjectName("label_2")
 
         self.label_3 = QtWidgets.QLabel("Label 3", self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(740, 570, 81, 41))
+        self.label_3.setGeometry(QtCore.QRect(250, 840, 81, 41))
         self.label_3.setFont(QtGui.QFont("Arial", 20, italic=False))
         self.label_3.setObjectName("label_3")
 
         self.label_4 = QtWidgets.QLabel("Label 4", self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(10, 490, 101, 31))
+        self.label_4.setGeometry(QtCore.QRect(30, 680, 101, 31))
         self.label_4.setObjectName("label_4")
 
         self.pushButton = QtWidgets.QPushButton("Button 1", self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(40, 560, 221, 61))
+        self.pushButton.setGeometry(QtCore.QRect(20, 760, 221, 61))
         self.pushButton.setFont(QtGui.QFont("Arial", 20))
         self.pushButton.setObjectName("pushButton")
 
         self.pushButton_2 = QtWidgets.QPushButton("Button 2", self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(320, 560, 221, 61))
+        self.pushButton_2.setGeometry(QtCore.QRect(20, 890, 221, 61))
         self.pushButton_2.setFont(QtGui.QFont("Arial", 20))
         self.pushButton_2.setObjectName("pushButton_2")
 
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(850, 550, 221, 81))
+        self.textBrowser.setGeometry(QtCore.QRect(340, 820, 221, 81))
         self.textBrowser.setObjectName("textBrowser")
         self.textBrowser.setStyleSheet("color: red; font-size: 38pt")
 
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(120, 490, 421, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(140, 680, 421, 31))
         self.lineEdit.setObjectName("lineEdit")
 
         mainWindow.setCentralWidget(self.centralwidget)
@@ -80,6 +80,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         self.retranslateUi(mainWindow)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
+
+    def fullscreen(self):
+        self.showFullScreen()
 
     def retranslateUi(self, mainWindow):
         _ = QtCore.QCoreApplication.translate
@@ -92,12 +95,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.pushButton.setText(_("MainWindow", "选择图片"))
         self.pushButton.clicked.connect(self.display_orginal)
         self.pushButton_2.setText(_("MainWindow", "人数检测"))
-        self.pushButton_2.clicked.connect(self.pepple_detection)
+        self.pushButton_2.clicked.connect(self.people_detection)
 
     def display_orginal(self):
         file_dir = os.path.dirname(__file__)
         self.cwd = os.path.join(file_dir, 'detected_pictures')
-        filename = QFileDialog.getOpenFileName(self.centralwidget, "选取要检测的图片", self.cwd, "Image Files (*.jpg)")
+        filename = QFileDialog.getOpenFileName(self.centralwidget, "选取要检测的图片",
+                                               self.cwd, "Image Files (*.jpg *.png *.tif)")
         if filename[0] == "":
             print("\n取消选择")
             return
@@ -110,10 +114,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         else:
             print("\n图片不存在")
 
-    def pepple_detection(self):
+    def people_detection(self):
         # 加载图片
-        img = cv2.imread(self.lineEdit.text())
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        image = cv2.imread(self.lineEdit.text())
+        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
         # 检测人脸
         faces = self.face_detection_model.detectMultiScale(img, scaleFactor=1.1, minNeighbors=5)
@@ -128,7 +132,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             face = img[y:y + h, x:x + w]
 
             # 预处理图片
-            face = cv2.resize(face, (224, 224))
+            face = cv2.resize(face, (360, 480))
             face = face.astype('float32') / 255.0
             face = np.expand_dims(face, axis=0)
 
@@ -141,7 +145,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         qImg = QImage(img.data, img.shape[1], img.shape[0], QImage.Format_RGB888)
         pixmap = QPixmap(qImg.copy())
         self.label_2.setPixmap(pixmap)
-        self.label_2.setScaledContents(True)
+        self.label_2.setScaledContents(False)
 
 
 if __name__ == "__main__":
