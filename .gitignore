@@ -4,3 +4,4 @@
 trained_model/face_detection_model.h5
 facedata/train
 facedata/val
+facedata/test
