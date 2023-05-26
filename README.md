@@ -16,6 +16,8 @@
 
 ​	/train/Images储存训练图片，/val/Images储存验证图片
 
+​	数据集：CFP（Celebrities in Frontal Proﬁle ）数据集
+
 <img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/2.png" alt="facedata下的文件夹" style="zoom:67%;" />
 
 
