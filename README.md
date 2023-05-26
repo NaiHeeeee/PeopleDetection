@@ -44,7 +44,7 @@
 
 ​	*注：由于模型文件太大，故放在网盘中*
 
-​		*[人脸识别模型](https://pan.baidu.com/s/1n0upAnbbuRf5gprslOZWRA?pwd=trb6 )*
+​		*[人脸识别模型](https://pan.baidu.com/s/1_bSI5qoxfSUXSnpozUnOvQ?pwd=yh8h)*
 
 
 
