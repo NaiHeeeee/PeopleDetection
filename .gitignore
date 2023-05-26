@@ -2,4 +2,5 @@
 
 .idea/
 trained_model/face_detection_model.h5
-facedata/
+facedata/train
+facedata/val
