@@ -12,7 +12,7 @@ def train():
 
     # 设置批次大小和训练迭代次数
     batch_size = 32
-    epochs = 20
+    epochs = 50
 
     # 设置训练集，验证集和测试集的路径
     file_dir = os.path.dirname(__file__)
