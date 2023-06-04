@@ -66,7 +66,7 @@
 
 ​	识别后效果：
 
-<img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/4.png" alt="识别后" style="zoom: 67%;" />
+<img src="https://gitee.com/naihe6/people-detection/raw/master/Imags/4.png" alt="识别前" style="zoom:67%;" />
 
 
 
