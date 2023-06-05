@@ -9,7 +9,7 @@ Image-processing_people-detection
 ├── .gitignore         # Git忽略文件列表
 ├── LICENSE            # 许可证文件
 ├── train.py           # 模型训练程序
-├── 人数检测.py	         # 主程序
+├── 人数检测.py         # 主程序
 ├── 需求分析文档.md      # 需求分析文档
 ├── 软件设计文档.md      # 软件设计文档
 │
