@@ -48,7 +48,7 @@ Image-processing_people-detection
 
 ​		*[CAS-PEAL-R1下载链接](https://pan.baidu.com/s/1trlF2Fk6-qaZLdQn1mw4Jw?pwd=969c)*
 
-​	facedata为用于本项目中修改后的部分CAS-PEAL-R1数据集：
+​	facedata为用于本项目中修改后的CAS-PEAL-R1数据集：
 
 ​		*[facedata下载链接](https://pan.baidu.com/s/1JP3Jn3HAjjjvz0X_rePLdQ?pwd=is3n)*
 
