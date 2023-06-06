@@ -5,25 +5,25 @@
 ``````
 Image-processing_people-detection
 │
-├── README.md                			# 项目说明文件
-├── .gitignore               			# Git忽略文件列表
-├── LICENSE                  			# 许可证文件
-├── train.py							# 模型训练程序
-├──	人数检测.py							 # 主程序
-├── 需求分析文档.md						# 需求分析文档
-├── 软件设计文档.md						# 软件设计文档
+├── README.md                           # 项目说明文件
+├── .gitignore                          # Git忽略文件列表
+├── LICENSE                             # 许可证文件
+├── train.py                            # 模型训练程序
+├── 人数检测.py                          # 主程序
+├── 需求分析文档.md                       # 需求分析文档
+├── 软件设计文档.md                       # 软件设计文档
 │
-├── detected_pictures            		# 存放测试图片
-│   ├── test1.jpg						# 测试图片1
-│   └── test2.jpg            			# 测试图片2
+├── detected_pictures                   # 存放测试图片
+│   ├── test1.jpg                       # 测试图片1
+│   └── test2.jpg                       # 测试图片2
 │
-├── facedata                  			# 存放训练数据集
-│   ├── train      						# 训练集
-│   ├── val          					# 验证集
-│   └── test           					# 测试集
+├── facedata                            # 存放训练数据集
+│   ├── train                           # 训练集
+│   ├── val                             # 验证集
+│   └── test                            # 测试集
 │
-├── trained_model                  		# 存放训练好的模型
-│   └── face_detection_model.h5    		# 人脸识别模型
+├── trained_model                       # 存放训练好的模型
+│   └── face_detection_model.h5         # 人脸识别模型
 ``````
 
 ## 二·项目主要文件介绍
