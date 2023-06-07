@@ -28,7 +28,7 @@ Image-processing_people-detection
 
 ## 二·项目主要文件介绍
 
-### 1· 文件夹detected_pictures
+### 1· 文件夹`detected_pictures`
 
 用于存放需要进行人数检测的图片
 
@@ -38,23 +38,23 @@ Image-processing_people-detection
 
 用于存放训练人脸识别模型的图片数据
 
-​	/train储存训练图片，/val储存验证图片，/test储存测试图片
+​	`/train`储存训练图片，`/val`储存验证图片，`/test`储存测试图片
 
 
 
-​	数据集：中国科学院自动化研究所（CASIA）*[CAS-PEAL-R1 Face Database](http://www.jdl.link/peal/)*
+​	数据集：中国科学院自动化研究所（CASIA）*[**CAS-PEAL-R1 Face Database**](http://www.jdl.link/peal/)*
 
 <img src="https://raw.githubusercontent.com/NaiHeeeee/TyporaImg/main/Img/202306051133581.png" alt="2" style="zoom: 67%;" />
 
 ​		*[CAS-PEAL-R1下载链接](https://pan.baidu.com/s/1trlF2Fk6-qaZLdQn1mw4Jw?pwd=969c)*
 
-​	facedata为用于本项目中修改后的CAS-PEAL-R1数据集：
+​	`facedata`为用于本项目中修改后的**CAS-PEAL-R1**数据集：
 
 ​		*[facedata下载链接](https://pan.baidu.com/s/1JP3Jn3HAjjjvz0X_rePLdQ?pwd=is3n)*
 
 
 
-### 3· 文件夹trained_model
+### 3· 文件夹`trained_model`
 
 用于存放训练完成的人脸识别模型
 
