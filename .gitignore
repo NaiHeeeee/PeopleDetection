@@ -6,3 +6,4 @@ facedata/train
 facedata/val
 facedata/test
 *.ui
+detected_pictures/*.*
